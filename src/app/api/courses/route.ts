@@ -14,6 +14,7 @@ const courses: Course[] = [
       {
         id: 'modul-1',
         title: 'Co je tepelné čerpadlo',
+        type: 'lesson',
         content: `
 # Co je tepelné čerpadlo
 
@@ -37,6 +38,7 @@ Tepelné čerpadlo funguje na podobném principu jako chladnička, ale s opačn�
       {
         id: 'modul-2',
         title: 'Typy tepelných čerpadel',
+        type: 'lesson',
         content: `
 # Typy tepelných čerpadel
 
