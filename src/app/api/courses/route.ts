@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import type { Course } from '@/types/course';
+import type { Course } from '@/data/types';
 
 // Toto je dočasná databáze kurzů, později bude nahrazena skutečnou databází
 const courses: Course[] = [
@@ -9,9 +9,10 @@ const courses: Course[] = [
     description: 'Základní kurz o tepelných čerpadlech AC Heating',
     duration: '2 hodiny',
     level: 'beginner',
-    sections: [
+    tags: ['tepelná čerpadla', 'základy', 'technologie'],
+    modules: [
       {
-        id: 'section-1',
+        id: 'modul-1',
         title: 'Co je tepelné čerpadlo',
         content: `
 # Co je tepelné čerpadlo
@@ -31,12 +32,10 @@ Tepelné čerpadlo funguje na podobném principu jako chladnička, ale s opačn�
 1. Úspora energie
 2. Ekologický provoz
 3. Nízké provozní náklady
-4. Komfortní vytápění
-        `,
-        order: 1,
+4. Komfortní vytápění`
       },
       {
-        id: 'section-2',
+        id: 'modul-2',
         title: 'Typy tepelných čerpadel',
         content: `
 # Typy tepelných čerpadel
@@ -56,15 +55,10 @@ Existuje několik základních typů tepelných čerpadel podle zdroje tepla:
 ## Voda-voda
 - Nejvyšší účinnost
 - Náročné na zdroj vody
-- Specifické požadavky na umístění
-        `,
-        order: 2,
-      },
-    ],
-    tags: ['tepelná čerpadla', 'základy', 'technologie'],
-    createdAt: new Date('2023-12-01'),
-    updatedAt: new Date('2023-12-01'),
-  },
+- Specifické požadavky na umístění`
+      }
+    ]
+  }
 ];
 
 export async function GET(request: Request) {
@@ -89,9 +83,7 @@ export async function POST(request: Request) {
     // Zde by byla validace a ukládání do databáze
     courses.push({
       ...course,
-      id: course.id || Math.random().toString(36).substr(2, 9),
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      id: course.id || Math.random().toString(36).substr(2, 9)
     });
 
     return NextResponse.json(course, { status: 201 });
