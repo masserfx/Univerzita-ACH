@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,10 +9,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        'ach-blue': 'var(--ach-blue)',
+        'ach-light-blue': 'var(--ach-light-blue)',
+        'ach-dark': 'var(--ach-dark)',
+        'ach-gray': 'var(--ach-gray)',
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#1a1a1a',
+            a: {
+              color: 'var(--ach-blue)',
+              '&:hover': {
+                color: 'var(--ach-light-blue)',
+              },
+            },
+          },
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 } satisfies Config;
+
+export default config;

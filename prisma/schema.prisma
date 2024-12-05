@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model KnowledgeBase {
+  id         Int      @id @default(autoincrement())
+  title      String
+  category   String
+  content    String   @db.Text
+  keywords   String[]
+  sourcePath String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Curriculum {
+  id       Int      @id @default(autoincrement())
+  category String
+  modules  Module[]
+}
+
+model Module {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  duration    Int
+  order       Int
+  lessons     Lesson[]
+  curriculum  Curriculum @relation(fields: [curriculumId], references: [id])
+  curriculumId Int
+}
+
+model Lesson {
+  id       Int    @id @default(autoincrement())
+  title    String
+  content  String @db.Text
+  duration Int
+  order    Int
+  module   Module @relation(fields: [moduleId], references: [id])
+  moduleId Int
+}
+
+model Test {
+  id        Int        @id @default(autoincrement())
+  title     String
+  category  String
+  questions Question[]
+}
+
+model Question {
+  id            Int      @id @default(autoincrement())
+  text          String
+  type          String
+  correctAnswer String
+  options       String[]
+  explanation   String
+  test          Test     @relation(fields: [testId], references: [id])
+  testId        Int
+} 

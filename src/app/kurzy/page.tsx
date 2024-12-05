@@ -2,10 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Course, courses } from '@/data/courses';
 
-export default function HomePage() {
+export default function CoursesPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [allCourses, setAllCourses] = useState<Course[]>([]);
@@ -21,30 +20,9 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Vítejte v AC Heating Univerzitě
-            </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Vzdělávací platforma pro profesionály v oblasti tepelných čerpadel
-            </p>
-            <Link
-              href="/kurzy"
-              className="inline-block bg-ach-blue text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
-            >
-              Prozkoumat kurzy
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* All Courses */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">Dostupné kurzy</h2>
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-4xl font-bold text-gray-900 mb-8">Všechny kurzy</h1>
         
         {isLoading ? (
           <div className="flex items-center justify-center py-12">
@@ -102,4 +80,4 @@ export default function HomePage() {
       </div>
     </div>
   );
-}
+} 
