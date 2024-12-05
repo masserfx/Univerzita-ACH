@@ -33,7 +33,6 @@ export const obchodniProcesBD: Course = {
     {
       id: 'telefonat',
       title: 'Telefonát',
-      type: 'lesson',
       content: `# Telefonát
 ## Výchozí stav
 Mám telefonický kontakt na základě jedné z variant:
@@ -76,7 +75,6 @@ Mám telefonický kontakt na základě jedné z variant:
     {
       id: 'schuzka-predseda',
       title: 'Schůzka - předseda',
-      type: 'lesson',
       content: `# Schůzka - předseda
 ## Příprava
 1. Nastudovat historii komunikace
@@ -99,7 +97,7 @@ Mám telefonický kontakt na základě jedné z variant:
 
 ## Obsah schůzky
 1. Představení sebe a společnosti (ne historie, ale úspěchy)
-2. Zdůraznit: teplo je jediná v��c, kterou mohu ovlivnit a zároveň je to největší položka v rozpočtu – my máme řešení, jak ušetřit
+2. Zdůraznit: teplo je jediná věc, kterou mohu ovlivnit a zároveň je to největší položka v rozpočtu – my máme řešení, jak ušetřit
 3. Zjišťovat potřeby a obavy, vzbuzovat důvěru, motivovat
 4. Prezentovat Loskutáka
 5. Prezentovat (ukázkovou) ekonomiku
@@ -137,7 +135,6 @@ Mám telefonický kontakt na základě jedné z variant:
     {
       id: 'schuzka-vybor',
       title: 'Schůzka - výbor',
-      type: 'lesson',
       content: `# Schůzka - výbor
 ## Příprava
 1. Sesumírovat všechny dosud získané informace – mít perfektní přehled o domě a jeho situaci
@@ -210,7 +207,6 @@ Mám telefonický kontakt na základě jedné z variant:
     {
       id: 'shromazdeni-vlastniku',
       title: 'Shromáždění vlastníků',
-      type: 'lesson',
       content: `# Shromáždění vlastníků
 ## Příprava
 1. Sesumírovat všechny dosud získané informace:
@@ -252,7 +248,42 @@ Mám telefonický kontakt na základě jedné z variant:
    - Video Loskutáka
    - Porovnání současných a budoucích plateb
    - Úspory pro jednotlivé byty
-7. Aktivně zapojovat výbor do prezentace`
+7. Aktivně zapojovat výbor do prezentace
+8. Zjišťovat potřeby a obavy, vzbuzovat důvěru, motivovat
+9. Technické dotazy odkládat na pozdější individuální konzultace
+
+## Cíl / Výstup
+1. Odsouhlasení změny vytápění
+2. Pověření výboru k uzavření smlouvy
+
+## <span style="color: #FF0000;">POZOR!</span>
+- Jeden připravuje, druhý mluví
+- Jeden mluví, druhý sleduje
+- Výbor spolupracuje, je infiltrován mezi lidi, potvrzuje předchozí kroky`
+    },
+    {
+      id: 'smlouva-a-predani',
+      title: 'Smlouva a předání',
+      content: `# Smlouva a předání
+## Smlouva
+1. <span style="color: #FF0000;">SMLOUVU K PODPISU DOŘEŠÍ OBCHODNÍK</span> (dokud není podepsaná smlouva, není obchod)
+2. Vzor smlouvy najdete zde:
+   <span style="color: #0000FF;">Z:\\Obchod - ČR\\+ BYTOVÉ DOMY\\SoD, servisní smlouva, garance</span>
+3. Přílohy zajišťuje:
+   - Obchodník
+   - Technik
+   - Podpora ve společné kooperaci
+4. Nestandardní věci ve smlouvě je nutné poznamenat do karty zákazníka v EVI
+   - Například: specifika budoucího servisu a technické podpory
+
+## Předání
+1. <span style="color: #FF0000;">DALŠÍ ÚČAST OBCHODNÍKA JE NA PŘEDÁNÍ AKCE</span>
+2. Oficiální předání:
+   - Probíhá po kolaudaci
+   - PROMO AKCE S OBČERSTVENÍM
+3. Po měsíci:
+   - Schůzka – provize a provozní data
+   - <span style="color: #FF0000;">PŘI PŘEDÁNÍ ROVNOU DOMLOUVÁ REFERENCI</span>`
     }
   ]
-};
+}; 
