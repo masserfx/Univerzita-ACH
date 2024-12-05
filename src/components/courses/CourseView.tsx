@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import type { Course } from '@/data/types';
 import { marked } from 'marked';
 
@@ -11,6 +11,11 @@ interface CourseViewProps {
 export function CourseView({ course }: CourseViewProps) {
   const [currentModuleIndex, setCurrentModuleIndex] = useState(0);
   const currentModule = course.modules[currentModuleIndex];
+  const moduleContentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    moduleContentRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [currentModuleIndex]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -51,7 +56,7 @@ export function CourseView({ course }: CourseViewProps) {
 
           {/* Obsah modulu */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div ref={moduleContentRef} className="bg-white rounded-lg shadow-lg p-6">
               <h2 className="text-2xl font-bold mb-6">{currentModule.title}</h2>
               
               {/* Textový obsah */}
