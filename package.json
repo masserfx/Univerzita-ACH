@@ -17,6 +17,7 @@
     "autoprefixer": "^10.4.16",
     "marked": "^15.0.3",
     "next": "14.0.3",
+    "pdf-lib": "^1.17.1",
     "postcss": "^8.4.32",
     "prisma": "^6.0.1",
     "react": "18.2.0",
