@@ -5,6 +5,7 @@ import { pravidlaNabidek } from './nabidky';
 import { obchodniProcesBD } from './obchodni-proces-bd';
 import { uvodDoACHeating } from './uvod';
 import { vytapenipanelakuCourse } from './vytapenipanelaku';
+import { zakazkyCourse } from './zakazky';
 
 export const allCourses: Course[] = [
   eviSystem,
@@ -12,5 +13,6 @@ export const allCourses: Course[] = [
   pravidlaNabidek,
   obchodniProcesBD,
   uvodDoACHeating,
-  vytapenipanelakuCourse
+  vytapenipanelakuCourse,
+  zakazkyCourse
 ]; 
