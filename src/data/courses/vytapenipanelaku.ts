@@ -11,6 +11,7 @@ export const vytapenipanelakuCourse: Course = {
     {
       id: "uvod",
       title: "Úvod do vytápění panelových domů",
+      type: "lesson",
       content: `
 # Vytápění panelových domů tepelnými čerpadly
 
@@ -56,6 +57,7 @@ export const vytapenipanelakuCourse: Course = {
     {
       id: "technicke-reseni",
       title: "Technické řešení",
+      type: "lesson",
       content: `
 # Technické řešení vytápění tepelnými čerpadly
 
@@ -97,6 +99,7 @@ export const vytapenipanelakuCourse: Course = {
     {
       id: "realizace",
       title: "Postup realizace",
+      type: "lesson",
       content: `
 # Postup realizace projektu
 
