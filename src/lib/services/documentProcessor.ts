@@ -1,6 +1,7 @@
 import { PDFDocument } from 'pdf-lib';
 import * as fs from 'fs/promises';
 import path from 'path';
+import pdfjsLib from 'pdfjs-dist';
 
 export class DocumentProcessor {
   private documentsPath: string;
@@ -38,17 +39,25 @@ export class DocumentProcessor {
   }
 
   private async extractPDFContent(filePath: string): Promise<string> {
-    const pdfBytes = await fs.readFile(filePath);
-    const pdfDoc = await PDFDocument.load(pdfBytes);
-    const pages = pdfDoc.getPages();
-    
-    let content = '';
-    for (const page of pages) {
-      const text = await page.getText();
-      content += text + '\n';
+    try {
+      const data = await fs.readFile(filePath);
+      const loadingTask = pdfjsLib.getDocument({ data });
+      const pdf = await loadingTask.promise;
+      
+      let content = '';
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const textContent = await page.getTextContent();
+        content += textContent.items
+          .map((item: any) => item.str)
+          .join(' ') + '\n';
+      }
+      
+      return content;
+    } catch (error) {
+      console.error('Chyba při extrakci textu z PDF:', error);
+      return `Nepodařilo se extrahovat text z PDF: ${filePath}`;
     }
-    
-    return content;
   }
 }
 
