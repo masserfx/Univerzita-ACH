@@ -12,3 +12,16 @@ export type Progress = {
     score?: number;
   }[];
 };
+
+export interface QuizResult {
+  quizId: string;
+  score: number;
+  maxScore: number;
+  passed: boolean;
+  completedAt: Date;
+  answers: {
+    questionId: string;
+    selectedAnswerId: string;
+    isCorrect: boolean;
+  }[];
+}
