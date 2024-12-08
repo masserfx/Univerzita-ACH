@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ach-blue: #005ca9;
+  --ach-light-blue: #0077d9;
+  --ach-dark: #1a1a1a;
+  --ach-gray: #f5f5f5;
+}
+
+@layer base {
+  body {
+    @apply text-gray-900 bg-gray-50;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-ach-blue text-white px-4 py-2 rounded-lg hover:bg-ach-light-blue transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-ach-blue border border-ach-blue px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors;
+  }
+}
+
+@layer utilities {
+  .text-ach-blue {
+    color: var(--ach-blue);
+  }
+  
+  .bg-ach-blue {
+    background-color: var(--ach-blue);
+  }
+  
+  .text-ach-light-blue {
+    color: var(--ach-light-blue);
+  }
+  
+  .bg-ach-light-blue {
+    background-color: var(--ach-light-blue);
+  }
+} 
